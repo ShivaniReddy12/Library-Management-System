@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Books - Library</title>
+  <script>
+    function searchBooks() {
+      var input = document.getElementById("search").value.toUpperCase();
+      var rows = document.getElementById("bookTable").getElementsByTagName("tr");
+      for (var i = 1; i < rows.length; i++) {
+        var title = rows[i].cells[1].textContent.toUpperCase();
+        var author = rows[i].cells[2].textContent.toUpperCase();
+        rows[i].style.display = (title.includes(input) || author.includes(input)) ? "" : "none";
+      }
+    }
+  </script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background: linear-gradient(to bottom right, #eaf6ff, #f9f9f9);">
+
+  <!-- Header -->
+  <div style="background: linear-gradient(to right, #709bbaff, #7ec9cdff); color: white; padding: 25px; text-align: center;">
+    <h1 style="margin: 0; font-size: 32px;">📚 Library Management System</h1>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div style="background: linear-gradient(to right, #333, #444); overflow: hidden;">
+    <a href="/Home/" style="float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none;">Home</a>
+    <a href="/Books/" style="float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none;">Books</a>
+    <a href="/Members/" style="float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none;">Members</a>
+    <a href="/IssueBook/" style="float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none;">IssueBook</a>
+    <a href="/ReturnBook/" style="float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none;">ReturnBook</a>
+     <a href="/Contactus/" style="float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none;">Contactus</a>
+  </div>
+  <!-- Content -->
+  <div style="padding: 30px;">
+    <h2 style="color: #d2647cff">📚 Books Section</h2>
+    <input type="text" id="search" onkeyup="searchBooks()" placeholder="Search by title or author..." 
+           style="padding: 10px; width: 300px; font-size: 16px; border: 1px solid #ccc; margin-bottom: 20px;">
+
+    <table id="bookTable" style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <tr style="background-color: black; color: white;">
+        <th style="padding: 12px; border: 1px solid #ccc;">S.No</th>
+        <th style="padding: 12px; border: 1px solid #ccc;">Title</th>
+        <th style="padding: 12px; border: 1px solid #ccc;">Author</th>
+        <th style="padding: 12px; border: 1px solid #ccc;">Genre</th>
+        <th style="padding: 12px; border: 1px solid #ccc;">Availability</th>
+      </tr>
+
+      <!-- 15 Books -->
+      <tr><td>1</td><td>The Great Gatsby</td><td>F. Scott Fitzgerald</td><td>Classic</td><td>Available</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>2</td><td>To Kill a Mockingbird</td><td>Harper Lee</td><td>Fiction</td><td>Issued</td></tr>
+      <tr><td>3</td><td>1984</td><td>George Orwell</td><td>Dystopian</td><td>Available</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>4</td><td>Pride and Prejudice</td><td>Jane Austen</td><td>Romance</td><td>Available</td></tr>
+      <tr><td>5</td><td>Harry Potter and the Sorcerer's Stone</td><td>J.K. Rowling</td><td>Fantasy</td><td>Issued</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>6</td><td>The Hobbit</td><td>J.R.R. Tolkien</td><td>Fantasy</td><td>Available</td></tr>
+      <tr><td>7</td><td>The Catcher in the Rye</td><td>J.D. Salinger</td><td>Fiction</td><td>Issued</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>8</td><td>The Alchemist</td><td>Paulo Coelho</td><td>Adventure</td><td>Available</td></tr>
+      <tr><td>9</td><td>The Da Vinci Code</td><td>Dan Brown</td><td>Mystery</td><td>Issued</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>10</td><td>The Book Thief</td><td>Markus Zusak</td><td>Historical</td><td>Available</td></tr>
+      <tr><td>11</td><td>Animal Farm</td><td>George Orwell</td><td>Political Satire</td><td>Available</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>12</td><td>Jane Eyre</td><td>Charlotte Brontë</td><td>Gothic</td><td>Issued</td></tr>
+      <tr><td>13</td><td>Life of Pi</td><td>Yann Martel</td><td>Adventure</td><td>Available</td></tr>
+      <tr style="background-color: #f9f9f9;"><td>14</td><td>The Kite Runner</td><td>Khaled Hosseini</td><td>Drama</td><td>Available</td></tr>
+      <tr><td>15</td><td>The Fault in Our Stars</td><td>John Green</td><td>Romance</td><td>Issued</td></tr>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: linear-gradient(to right, #709bbaff, #7ec9cdff); color: white; text-align: center; padding: 10px;">
+    <p style="margin: 0;">&copy; 2025 Library Management System</p>
+  </div>
+
+</body>
+</html>
